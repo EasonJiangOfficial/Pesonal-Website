@@ -22,3 +22,63 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.text-gradient-blue {
+    background: linear-gradient(
+      0deg,
+      theme("colors.gradient-start-blue"),
+      theme("colors.gradient-end-blue")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-gradient-red {
+    background: linear-gradient(
+      0deg,
+      theme("colors.gradient-start-red"),
+      theme("colors.gradient-end-red")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-orange {
+    background: linear-gradient(
+      0deg,
+      theme("colors.gradient-start-orange"),
+      theme("colors.gradient-end-orange")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-green {
+    background: linear-gradient(
+      0deg,
+      theme("colors.gradient-start-green"),
+      theme("colors.gradient-end-green")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  
+  .text-gradient-purple {
+    background: linear-gradient(
+      0deg,
+      theme("colors.gradient-start-purple"),
+      theme("colors.gradient-end-purple")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-pink {
+    background: linear-gradient(
+      0deg,
+      theme("colors.gradient-start-pink"),
+      theme("colors.gradient-end-pink")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
