@@ -3,24 +3,13 @@
 @import 'tailwindcss/utilities';
 
 
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Cubano, sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
 
 html {
     box-sizing: border-box;
     scroll-behavior: smooth !important;
-}
-
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Cubano, sans-serif;
 }
 
 .text-gradient-blue {

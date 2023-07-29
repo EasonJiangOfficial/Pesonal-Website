@@ -14,8 +14,8 @@ export default function Hero() {
 
   return (
     <>
-      <div className="flex flex-row w-full">
-        <div className="flex flex-col">
+      <div className="w-full flex flex-col h-screen justify-center items-center">
+        <div className="flex flex-col justify-center ">
           <h1 className="text-8xl" text-lg>
             Hi Im Eason
           </h1>

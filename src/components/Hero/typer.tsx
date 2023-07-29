@@ -20,7 +20,7 @@ export default function Typer({ gradientClasses }: TyperProps) {
           .exec(async () => {
             await setGradient("custom-green");
           })
-          .type("Full Stack Developer.")
+          .type("Developer.")
           .pause(500)
           .delete()
           .exec(async () => {
