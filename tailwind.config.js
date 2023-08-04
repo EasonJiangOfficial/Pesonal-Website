@@ -27,6 +27,10 @@ module.exports = {
         "gradient-end-pink": '#DB2777',
       }
     },
+    fontFamily: {
+      header:["cubano", "sans-serif"],
+      body: ["inter", "sans-serif"],
+    }
   },
   plugins: [],
 }

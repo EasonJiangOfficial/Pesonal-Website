@@ -17,10 +17,10 @@ export default function Hero() {
     <>
       <div className="w-full flex flex-col min-h-screen justify-center items-center">
         <div className="flex flex-col justify-center ">
-          <h1 className="text-8xl">
+          <h1 className=" font-header text-8xl text-white">
             Hi Im Eason
           </h1>
-          <h1 className="text-5xl">
+          <h1 className="font-header text-5xl text-white">
             Im a <Typer gradientClasses={gradientClasses} />
           </h1>
         </div>
