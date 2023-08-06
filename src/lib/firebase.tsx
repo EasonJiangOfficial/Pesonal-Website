@@ -1,4 +1,4 @@
-import { initializeApp, getApps } from "firebase/app";
+import { initializeApp, getApps, FirebaseApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"; // Include these Firestore functions
@@ -13,16 +13,17 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-let app;
+let app : FirebaseApp;
 
 if (!getApps().length) {
   app = initializeApp(firebaseConfig);
+
   if (app.name && typeof window !== "undefined") {
     const analytics = getAnalytics(app);
   }
 } else {
   app = getApps()[0]; // if already initialized, use that one
+
 }
 
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+export default app;

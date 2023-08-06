@@ -1,13 +1,8 @@
 import React from "react";
-import {
-  collection,
-  getDocs,
-  getFirestore,
-  query,
-  where,
-} from "firebase/firestore";
-import { GetServerSidePropsContext } from "next";
 import Link from "next/link";
+import {TbBrandNextjs} from "react-icons/Tb"
+import {FaReact,FaHtml5,FaCss3} from "react-icons/Fa"
+import {SiWeb3Dotjs,SiJavascript,SiTypescript,SiTailwindcss} from "react-icons/Si"
 
 interface Project {
   description: string;
@@ -15,7 +10,6 @@ interface Project {
   name: string;
   technologies: string[];
 }
-
 interface ProjectsListProps {
   projects: Project[];
 }
@@ -36,24 +30,15 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
             <p className="text-2 font-body">
               {project.description.slice(0, 400) + "..."}
             </p>
+            {/* {project.technologies.map((tech) => {
+              
+              return ();
+            })} */}
           </div>
         </div>
       ))}
     </div>
   );
 };
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const db = getFirestore();
-  const projectsCollection = collection(db, "Projects");
-  const projectsSnapshot = await getDocs(projectsCollection);
-  const projects = projectsSnapshot.docs.map((doc) => doc.data());
-
-  return {
-    props: {
-      projects,
-    },
-  };
-}
 
 export default ProjectsList;

@@ -7,8 +7,30 @@ import Hero from "../components/Hero/hero";
 import Projects from "@/components/Projects/projects";
 import PageContainer from "@/components/Layout/pageContainer";
 import Blog from "./blog";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
+import { GetStaticPropsContext } from "next";
+import app from "../lib/firebase";
 
-export default function landingPage() {
+
+interface Project {
+  description: string;
+  github: string;
+  name: string;
+  technologies: string[];
+}
+
+interface ProjectsListProps {
+  projects: Project[];
+}
+
+
+ const landingPage : React.FC<ProjectsListProps> = ({projects}) => {
   return (
     <div className="flex flex-col justify-center items-center bg-gradient-to-br from-[rgb(18,24,27)] to-[rgb(32,39,55)]">
       <Head>
@@ -19,10 +41,25 @@ export default function landingPage() {
       </Head>
         <Hero />
       <PageContainer>
-        <Projects />
+        <Projects projectsList={projects}/>
         {/* <Anime />
         <Blog /> */}
       </PageContainer>
     </div>
   );
 }
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  const db = getFirestore(app);
+  const projectsCollection = collection(db, "Projects");
+  const projectsSnapshot = await getDocs(projectsCollection);
+  const projects = projectsSnapshot.docs.map((doc) => doc.data());
+
+  return {
+    props: {
+      projects
+    }
+  };  
+}
+
+export default landingPage;
