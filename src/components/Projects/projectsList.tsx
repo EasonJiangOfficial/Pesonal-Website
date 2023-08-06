@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import {TbBrandNextjs} from "react-icons/Tb"
-import {FaReact,FaHtml5,FaCss3} from "react-icons/Fa"
-import {SiWeb3Dotjs,SiJavascript,SiTypescript,SiTailwindcss} from "react-icons/Si"
+// import {TbBrandNextjs} from "react-icons/Tb"
+// import {FaReact,FaHtml5,FaCss3} from "react-icons/Fa"
+// import {SiWeb3Dotjs,SiJavascript,SiTypescript,SiTailwindcss} from "react-icons/Si"
 
 interface Project {
   description: string;
