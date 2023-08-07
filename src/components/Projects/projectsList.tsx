@@ -20,12 +20,12 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
       {projects.map((project, index) => (
         <div
           key={index}
-          className=" hover:from-gradient-end-green hover:to-emerald-800 hover:-translate-y-4 hover:shadow-2xl hover:ease-in duration-200 rounded-[30px] bg-gradient-to-b from-gradient-start-green to-gradient-end-green p-9 w-full h-[36rem] flex flex-col justify-center items-center text-white"
+          className=" hover:from-gradient-end-green hover:to-emerald-800 hover:-translate-y-4 hover:shadow-2xl hover:ease-in duration-200 rounded-[30px] bg-gradient-to-b from-gradient-start-green to-gradient-end-green p-4 w-full h-[30em] sm:h-[30rem] md:h-[32rem] lg:h-[34rem] flex flex-col justify-center items-center text-white"
         >
-          <div className="h-2/6"></div>
+          <div className="h-3/6"></div>
           <div className="flex flex-col gap-2">
             <Link href={project.github}>
-              <h1 className="text-5xl h-4/6 font-header">{project.name}</h1>
+              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl h-4/6 font-header">{project.name}</h1>
             </Link>
             <p className="text-2 font-body">
               {project.description.slice(0, 400) + "..."}
