@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { TbBrandNextjs } from "react-icons/Tb";
+// import { TbBrandNextjs } from "react-icons/Tb";
 import { FaReact, FaHtml5, FaCss3,FaInfinity } from "react-icons/Fa";
 import {
   SiWeb3Dotjs,
@@ -26,7 +26,7 @@ interface TechLogos {
 
 const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
   const techLogos : TechLogos = {
-    "NextJs": <TbBrandNextjs />,
+    // "NextJs": <TbBrandNextjs />,
     "React": <FaReact />,
     "HTML": <FaHtml5 />,
     "CSS": <FaCss3 />,
