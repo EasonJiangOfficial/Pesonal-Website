@@ -26,16 +26,16 @@ interface TechLogos {
 
 const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
   const techLogos : TechLogos = {
-    "NextJs": <TbBrandNextjs className=""/>,
-    "React": <FaReact className=""/>,
-    "HTML": <FaHtml5 className=""/>,
-    "CSS": <FaCss3 className=""/>,
-    "Web3": <SiWeb3Dotjs className=""/>,
-    "JavaScript": <SiJavascript className=""/>,
-    "TypeScript": <SiTypescript className=""/>,
-    "Tailwind": <SiTailwindcss className=""/>,
-    "Firebase": <SiFirebase className=""/>,
-    "Motoko": <FaInfinity className=""/>,
+    "NextJs": <TbBrandNextjs />,
+    "React": <FaReact />,
+    "HTML": <FaHtml5 />,
+    "CSS": <FaCss3 />,
+    "Web3": <SiWeb3Dotjs />,
+    "JavaScript": <SiJavascript />,
+    "TypeScript": <SiTypescript />,
+    "Tailwind": <SiTailwindcss />,
+    "Firebase": <SiFirebase />,
+    "Motoko": <FaInfinity />,
   };
 
   return (
