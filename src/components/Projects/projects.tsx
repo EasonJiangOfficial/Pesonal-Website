@@ -3,6 +3,7 @@ import Image from "next/image";
 import ScrollAnimation from "../scrollAnimation";
 import ImageSpinAnimation from "../imageSpinAnimation";
 import ProjectsList from "./projectsList";
+
 interface Project {
   description: string;
   github: string;
