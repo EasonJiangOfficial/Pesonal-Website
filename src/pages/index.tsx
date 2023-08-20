@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Hero from "../components/Hero/hero";
-import Projects from "@/components/Projects/projects";
-import PageContainer from "@/components/Layout/pageContainer";
-import Blog from "./blog";
+import Projects from "../components/Projects/projects";
+import PageContainer from "../components/Layout/pageContainer";
+import AboutMe from "../components/aboutMe";
+// import Blog from "./blog";
+
 import {
   collection,
   getDocs,
@@ -16,6 +17,7 @@ import {
 } from "firebase/firestore";
 import { GetStaticPropsContext } from "next";
 import app from "../lib/firebase";
+
 
 
 interface Project {
@@ -39,8 +41,9 @@ interface ProjectsListProps {
         <link rel="icon" href="/images/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-        <Hero />
       <PageContainer>
+        <Hero />
+        <AboutMe />
         <Projects projectsList={projects}/>
         {/* <Anime />
         <Blog /> */}

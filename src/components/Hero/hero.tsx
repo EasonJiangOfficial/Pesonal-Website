@@ -14,7 +14,6 @@ export default function Hero() {
   };
 
   return (
-    <>
       <div className="w-full flex flex-col min-h-screen justify-center items-center">
         <div className="flex flex-col justify-center ">
           <h1 className=" font-header text-5xl sm:text-5xl md:text-7xl lg:text-8xl text-white">
@@ -26,6 +25,5 @@ export default function Hero() {
         </div>
         <div className="flex flex-col"></div>
       </div>
-    </>
   );
 }

@@ -60,6 +60,7 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
   //     setImageURLs(urlObject);
   //   });
   // }, []);
+
   return (
     <div className="mt-28 gap-12 place-items-center grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {projects.map((project, index) => (
