@@ -67,6 +67,7 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
         <div
           key={index}
           className=" hover:from-gradient-end-green hover:to-emerald-800 hover:-translate-y-4 hover:shadow-2xl hover:ease-in duration-200 rounded-[30px] bg-gradient-to-b from-gradient-start-green to-gradient-end-green p-4 w-full h-[30em] sm:h-[30rem] md:h-[32rem] lg:h-[34rem] flex flex-col justify-center items-center text-white"
+          data-aos="fade-right"
         >
           <div className="h-3/6">
             {/* <Image
