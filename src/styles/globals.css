@@ -75,3 +75,34 @@ html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0);
+    
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 0.6s;
+}
+
+.fadeDownOut{
+  animation-name: fadeDownOut;
+  animation-duration: 0.6s;
+}
