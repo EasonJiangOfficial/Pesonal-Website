@@ -15,7 +15,7 @@ export default function AboutMe() {
           Im a 16-year-old high school junior from Missouri. In my free time, I
           like to learn new skills like coding, video editing, playing musical
           instruments, UI design, cooking, etc.; read books about personal
-          finance/business; cook food; and watch anime. I'm working on PearPrep,
+          finance/business; cook food; and watch anime. I'm currently working on PearPrep,
           an all in 1 AP prep platform that will help students prep more
           efficiently for AP.
         </p>
