@@ -52,7 +52,7 @@ const landingPage: React.FC<ProjectsListProps> = ({ projects, blogPosts }) => {
         <Hero />
         <AboutMe />
         <Projects projectsList={projects} />
-        <BlogSection blogPosts={blogPosts} />
+        {/* <BlogSection blogPosts={blogPosts} /> */}
       </PageContainer>
     </div>
   );
