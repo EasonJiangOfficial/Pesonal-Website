@@ -17,7 +17,7 @@ import {
 } from "firebase/firestore";
 import { GetStaticPropsContext } from "next";
 import app from "../lib/firebase";
-import BlogSection from "@/components/blog/blogSection";
+// import BlogSection from "@/components/blog/blogSection";
 
 interface Project {
   description: string;
