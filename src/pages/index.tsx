@@ -17,6 +17,7 @@ import {
 } from "firebase/firestore";
 import { GetStaticPropsContext } from "next";
 import app from "../lib/firebase";
+import BlogSection from "@/components/blog/blogSection";
 
 interface Project {
   description: string;
@@ -24,12 +25,23 @@ interface Project {
   name: string;
   technologies: string[];
 }
+interface BlogPost {
+  title: string;
+  content: string;
+  date: string;
+  id: number;
+}
 
 interface ProjectsListProps {
   projects: Project[];
+  blogPosts: BlogPost[];
 }
 
-const landingPage: React.FC<ProjectsListProps> = ({ projects }) => {
+interface BlogSection {
+  
+}
+
+const landingPage: React.FC<ProjectsListProps> = ({ projects, blogPosts }) => {
   return (
     <div className="flex flex-col justify-center items-center bg-gradient-to-br from-[rgb(18,24,27)] to-[rgb(32,39,55)]">
       <Head>
@@ -42,8 +54,7 @@ const landingPage: React.FC<ProjectsListProps> = ({ projects }) => {
         <Hero />
         <AboutMe />
         <Projects projectsList={projects} />
-        {/* <Anime />
-        <Blog /> */}
+        <BlogSection blogPosts={blogPosts} />
       </PageContainer>
     </div>
   );
@@ -51,13 +62,21 @@ const landingPage: React.FC<ProjectsListProps> = ({ projects }) => {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   const db = getFirestore(app);
+  
   const projectsCollection = collection(db, "Projects");
+  const blogCollection = collection(db, "blog-posts");
+
   const projectsSnapshot = await getDocs(projectsCollection);
+  const blogsSnapshot = await getDocs(blogCollection);
+
+
   const projects = projectsSnapshot.docs.map((doc) => doc.data());
+  const blogPosts = blogsSnapshot.docs.map((doc) => doc.data());
 
   return {
     props: {
       projects,
+      blogPosts
     },
   };
 }

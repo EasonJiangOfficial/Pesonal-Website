@@ -3,25 +3,27 @@ import Image from "next/image";
 
 export default function AboutMe() {
   return (
-    <div className="items-center justify-center w-full min-h-screen flex flex-col-reverse lg:flex-row gap-10">
-      <div className="w-full sm:w-full md:w-3/6 lg:w-3/6 gap-2 flex flex-col">
+    <div className="flex min-h-screen w-full flex-col-reverse items-center justify-center gap-10 lg:flex-row">
+      <div className="flex w-full flex-col gap-2 sm:w-full md:w-3/6 lg:w-3/6">
         <h1
-          className="font-header text-6xl md:text-7xl lg:text-8xl text-center lg:text-left text-white"
+          className="font-header text-center text-6xl text-white md:text-7xl lg:text-left lg:text-8xl"
           data-aos="fade-up"
         >
           About Me
         </h1>
-        <p className="text-base font-body text-white text-center lg:text-left lg:text-lg" data-aos="fade-right">
-
-          Im a 16-year-old high school junior from Missouri. In my free time, I
+        <p
+          className="font-body text-center text-base text-white lg:text-left lg:text-lg"
+          data-aos="fade-right"
+        >
+          Im a 17-year-old high school junior from Missouri. In my free time, I
           like to learn new skills like coding, video editing, playing musical
           instruments, UI design, cooking, etc.; read books about personal
-          finance/business; cook food; and watch anime. I'm currently working on PearPrep,
-          an all in 1 AP prep platform that will help students prep more
-          efficiently for AP.
+          finance/business; cook food; and watch anime. I'm currently working on
+          PearPrep, an all in 1 AP prep platform that will help students prep
+          more efficiently for AP.
         </p>
       </div>
-      <div className="w-3/6 flex justify-center" data-aos="fade-left">
+      <div className="flex w-3/6 justify-center" data-aos="fade-left">
         <Image
           src="/images/Me.jpeg"
           width={500}
