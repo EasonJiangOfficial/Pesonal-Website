@@ -8,7 +8,11 @@ function MyApp({ Component, pageProps }) {
     AOS.init();
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+  <>
+  <Component {...pageProps} />
+  </>
+  )
 }
 
 export default MyApp;
