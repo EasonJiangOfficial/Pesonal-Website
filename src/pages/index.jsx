@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Hero from "../components/Hero/hero";
-import Projects from "../components/Projects/projects";
+import ProjectsSection from "../components/Projects/projectsSection";
 import PageContainer from "../components/Layout/pageContainer";
 import AboutMe from "../components/aboutMe";
 import {db} from "../lib/firebase"; // Ensure correct import
@@ -11,8 +11,7 @@ import {
   getDocs,
 } from "firebase/firestore";
 
-// import BlogSection from "@/components/blog/blogSection";
-
+import BlogSection from "../components/blog/blogSection";
 
 const landingPage = ({projects, blogPosts}) => {
   return (
@@ -26,7 +25,8 @@ const landingPage = ({projects, blogPosts}) => {
       <PageContainer>
         <Hero />
         <AboutMe />
-        <Projects projectsList={projects} />
+        <ProjectsSection projectsList={projects} />
+        <BlogSection blogPosts={blogPosts} />
       </PageContainer>
     </div>
   );
@@ -39,7 +39,6 @@ export async function getStaticProps() {
 
     const projects = projectsSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     const blogPosts = blogsSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-
     return {
       props: {
         projects: projects.length ? projects : [],

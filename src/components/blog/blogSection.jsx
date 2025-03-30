@@ -1,17 +1,13 @@
-// import React from "react";
+import React from "react";
+import BlogList from "./blogList";
 
-// const BlogSection = (blogPosts) => {
-//   {
-//     blogPosts.map((blogpost) => {
-//       return (
-//         <div className="post-contianer">
-//           <div className="post-title">{blogpost.title}</div>
-//           <div className="post-date">{blogpost.date}</div>
-//           <div className="post-content">{blogpost.content}</div>
-//         </div>
-//       );
-//     });
-//   }
-// };
+const BlogSection = ({blogPosts}) => {
+  return(
+    <div className="items-center justify-center w-full min-h-screen flex flex-col min-h-screen text-white">
+      <h1 className="font-header text-7xl sm:text-7xl md:text-7xl lg:text-8xl" data-aos="fade-up">Blog</h1>
+      <BlogList blogPosts={blogPosts}/>
+    </div>
+  )
+}
 
-// export default BlogSection;
+export default BlogSection;
