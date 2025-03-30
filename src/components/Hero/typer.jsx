@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import TypeIt from "typeit-react";
 
-interface TyperProps {
-  gradientClasses: { [key: string]: string };
-}
 
-export default function Typer({ gradientClasses }: TyperProps) {
+export default function Typer({gradientClasses}) {
   const [gradient, setGradient] = useState("");
 
   return (

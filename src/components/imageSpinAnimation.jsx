@@ -1,5 +1,4 @@
-import React,{useState,useEffect,ReactNode} from "react";
-import { useSpring, animated, useScroll } from '@react-spring/web';
+import React,{useState} from "react";
 import Image from "next/image";
 
 export default function ImageSpinAnimation() {

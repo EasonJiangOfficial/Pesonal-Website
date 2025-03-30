@@ -12,25 +12,10 @@ import {
 } from "react-icons/si";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
-interface Project {
-  description: string;
-  github: string;
-  name: string;
-  technologies: string[];
-  // image_url: string;
-}
-interface ProjectsListProps {
-  projects: Project[];
-}
 
-interface TechLogos {
-  [key: string]: JSX.Element;
-}
-interface ProejectURLs {
-  [key: string]: string;
-}
-const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
-  const techLogos: TechLogos = {
+
+const ProjectsList = ({ projects }) => {
+  const techLogos = {
     // "NextJs": <TbBrandNextjs />,
     React: <FaReact />,
     HTML: <FaHtml5 />,

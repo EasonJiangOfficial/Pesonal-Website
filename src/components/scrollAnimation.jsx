@@ -1,10 +1,7 @@
 import { useSpring, animated } from '@react-spring/web';
-import React,{ useEffect, useState,ReactNode } from 'react';
+import React,{ useEffect, useState,} from 'react';
 
-interface ScrollFadeComponentProps {
-  children: ReactNode;
-}
-const ScrollFadeComponent = ({ children }:ScrollFadeComponentProps) => {
+const ScrollFadeComponent = ({ children }) => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {

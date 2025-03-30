@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import React, {useState } from "react";
 import Link from "next/link";
 import Typer from "./typer";
-import ScrollAnimation from "../scrollAnimation";
-import { set } from "firebase/database";
 import {
   AiOutlineMail,
   AiFillGithub,
@@ -12,7 +9,7 @@ import {
 } from "react-icons/ai";
 
 export default function Hero() {
-  const gradientClasses: { [key: string]: string } = {
+  const gradientClasses = {
     "custom-green": "text-gradient-green",
     "custom-orange": "text-gradient-orange",
     "custom-red": "text-gradient-red",
