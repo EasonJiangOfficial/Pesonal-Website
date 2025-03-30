@@ -19,7 +19,7 @@ export default function AboutMe() {
           like to learn new skills like coding, video editing, playing musical
           instruments, UI design, cooking, etc.; read books about personal
           finance/business; cook food; and watch anime. I used to work at an ed-tech startup.
-          Im the CEO of EJ Ecom Holdings LLC, a umbrella company that aims to run multiple
+          Im the CEO of EJ Ecom Holdings LLC, an umbrella company that aims to run multiple
           e-commerce stores across various niches and industries.
         </p>
       </div>
