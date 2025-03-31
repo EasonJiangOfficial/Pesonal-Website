@@ -15,7 +15,7 @@ export default function AboutMe() {
           className="font-body text-center text-base text-white lg:text-left lg:text-lg"
           data-aos="fade-right"
         >
-          Im a 17-year-old high school junior from Missouri. In my free time, I
+          Im a 18-year-old high school senior from Missouri. In my free time, I
           like to learn new skills like coding, video editing, playing musical
           instruments, UI design, cooking, etc.; read books about personal
           finance/business; cook food; and watch anime. I used to work at an ed-tech startup.
