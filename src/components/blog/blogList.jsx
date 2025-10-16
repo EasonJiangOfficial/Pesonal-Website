@@ -36,6 +36,7 @@ export default function BlogList({ blogPosts }) {
               <p className="text-sm text-gray-300 font-body"> By Eason on {blogPost.postedDate} </p>
             </div>
             <p className="text-2 font-body break-words overflow-hidden text-ellipsis line-clamp-4">
+                <div><h1>Hello world</h1></div>
   {blogPost.content.slice(0, 700) + "..."}
 </p>
           </div>
