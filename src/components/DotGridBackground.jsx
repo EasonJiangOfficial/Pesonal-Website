@@ -88,9 +88,9 @@ const AnimatedDot = ({ dotX, dotY, mouseX, mouseY }) => {
   const angle = Math.atan2(dy, dx);
 
   // Calculate target values - increased movement for more dramatic effect
-  const targetScale = 1 + intensity * 3;
-  const targetTranslateX = Math.cos(angle) * intensity * 80;
-  const targetTranslateY = Math.sin(angle) * intensity * 80;
+  const targetScale = 1 + intensity;
+  const targetTranslateX = Math.cos(angle) * intensity * 30;
+  const targetTranslateY = Math.sin(angle) * intensity * 30;
   const targetOpacity = 0.3 + intensity * 0.7;
 
   // Animate scale and position with onChange callbacks

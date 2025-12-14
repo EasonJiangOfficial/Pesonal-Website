@@ -125,7 +125,7 @@ export default function Hero() {
           </h1>
           <p className="font-body text-base text-white text-center lg:text-left drop-shadow-lg">I'm a 19-year-old from rural Missouri. I like making videos online, singing, personal finance, tech, and anime.</p>
         </div>
-        <div className="flex justify-center items-center w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] lg:w-[300px] lg:h-[300px] order-1 lg:order-2 transition-all duration-300 ease-in-out sticker-hover hover:drop-shadow-2xl rounded-lg p-2 overflow-visible" data-aos="fade-left">
+        <div className="flex justify-center items-center w-[200px] h-[200px] sm:w-[200px] sm:h-[200px] lg:w-[300px] lg:h-[300px] order-1 lg:order-2 transition-all duration-300 ease-in-out sticker-hover hover:drop-shadow-2xl rounded-lg p-2" data-aos="fade-left">
           <Image
             src="/images/me.png"
             width={300}
