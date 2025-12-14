@@ -103,13 +103,12 @@ export default function Hero() {
     return("")
   };
   return (
-    <div className="w-full gap-10 flex flex-col min-h-screen justify-center items-center">
+    <div className="w-full gap-10 flex flex-col min-h-screen justify-center items-center relative z-10">
       <div className="flex gap-5 flex-row justify-center items-center">
         {showicons ? renderIcons() : unrenderIcons()}
       </div>
-
       <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-10 px-4">
-        <div className="flex flex-col justify-center items-center lg:items-start max-w-[750px]">
+        <div className="flex flex-col justify-center items-center lg:items-start max-w-[750px] order-2 lg:order-1">
           <h1
             className="font-header text-5xl sm:text-5xl md:text-7xl lg:text-8xl text-white text-center lg:text-left drop-shadow-lg"
             data-aos="fade-up"
@@ -126,13 +125,12 @@ export default function Hero() {
           </h1>
           <p className="font-body text-base text-white text-center lg:text-left drop-shadow-lg">I'm a 19-year-old from rural Missouri. I like making videos online, singing, personal finance, tech, and anime.</p>
         </div>
-        <div className="flex justify-center items-center w-[400px] h-[400px] rounded-full overflow-hidden" data-aos="fade-left">
+        <div className="flex justify-center items-center w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] lg:w-[300px] lg:h-[300px] order-1 lg:order-2 transition-all duration-300 ease-in-out sticker-hover hover:drop-shadow-2xl rounded-lg p-2 overflow-visible" data-aos="fade-left">
           <Image
-            src="/images/me.jpeg"
-            width={400}
-            height={400}
+            src="/images/me.png"
+            width={300}
+            height={300}
             alt="Picture of Eason Jiang"
-            className="rounded-full overflow-hidden"
           />
         </div>
       </div>
