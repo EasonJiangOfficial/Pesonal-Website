@@ -22,24 +22,24 @@ export default function CreatePost(){
     const handleSubmit = async (e) => {
         e.preventDefault();
         if(code === process.env.NEXT_PUBLIC_FIREBASE_API_KEY){
-        try{
-            await addDoc(collection(db, "blog-posts"), {
-                title: title,
-                content: content,
-                postedDate: getCurrentDate(),
-            })
-            toast.success("Blog post added successfully!");
-            setCode("")
-            setTitle("");
-            setContent("");
+            try{
+                await addDoc(collection(db, "blog-posts"), {
+                    title: title,
+                    content: content,
+                    postedDate: getCurrentDate(),
+                })
+                toast.success("Blog post added successfully!");
+                setCode("");
+                setTitle("");
+                setContent("");
+            }
+            catch (error) {
+                toast.error(error.message || "Failed to add blog post");
+            }    
         }
-        catch (error) {
-            toast.error(error)
-        }    
-    }
-    else{
-        toast.error("You are not an authorized user")
-    }
+        else{
+            toast.error("You are not an authorized user");
+        }
     };
     
     return (

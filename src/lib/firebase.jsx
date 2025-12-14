@@ -11,6 +11,7 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
+// Check if Firebase config is valid
 // Ensure Firebase is only initialized once
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
 

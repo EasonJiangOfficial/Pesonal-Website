@@ -1,6 +1,6 @@
-import React, {useState } from "react";
+import React, {useState} from "react";
 import Link from "next/link";
-import Typer from "./typer";
+import Image from "next/image";
 import {
   AiOutlineMail,
   AiFillGithub,
@@ -108,29 +108,34 @@ export default function Hero() {
         {showicons ? renderIcons() : unrenderIcons()}
       </div>
 
-      <div className="flex flex-col justify-center">
-        <h1
-          className=" font-header text-5xl sm:text-5xl md:text-7xl lg:text-8xl text-white"
-          data-aos="fade-up"
-        >
-          {name == "Eason" ? "Hi Im " : null}
-          <span
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={clickedName}
-            className={hover + " " + cursor}
+      <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-10 px-4">
+        <div className="flex flex-col justify-center items-center lg:items-start max-w-[750px]">
+          <h1
+            className="font-header text-5xl sm:text-5xl md:text-7xl lg:text-8xl text-white text-center lg:text-left drop-shadow-lg"
+            data-aos="fade-up"
           >
-            {name}
-          </span>
-        </h1>
-        <h1
-          className="font-header text-4xl sm:text-4xl md:text-5xl lg:text-5xl text-white"
-          data-aos="fade-up"
-        >
-          Im a <Typer gradientClasses={gradientClasses} />
-        </h1>
+            {name == "Eason" ? "Hi Im " : null}
+            <span
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              onClick={clickedName}
+              className={hover + " " + cursor}
+            >
+              {name}
+            </span>
+          </h1>
+          <p className="font-body text-base text-white text-center lg:text-left drop-shadow-lg">I'm a 19-year-old from rural Missouri. I like making videos online, singing, personal finance, tech, and anime.</p>
+        </div>
+        <div className="flex justify-center items-center w-[400px] h-[400px] rounded-full overflow-hidden" data-aos="fade-left">
+          <Image
+            src="/images/me.jpeg"
+            width={400}
+            height={400}
+            alt="Picture of Eason Jiang"
+            className="rounded-full overflow-hidden"
+          />
+        </div>
       </div>
-      <div className="flex flex-col"></div>
     </div>
   );
 }
