@@ -122,6 +122,9 @@ body {
 
 .sticker-hover {
   transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .sticker-hover:hover {

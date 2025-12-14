@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 const DotGridBackground = () => {
@@ -20,36 +20,49 @@ const DotGridBackground = () => {
   }, []);
 
   useEffect(() => {
+    let rafId;
     const handleMouseMove = (e) => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        setMousePos({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top,
-        });
-      }
+      // Throttle mouse updates using requestAnimationFrame
+      if (rafId) return;
+      
+      rafId = requestAnimationFrame(() => {
+        if (containerRef.current) {
+          const rect = containerRef.current.getBoundingClientRect();
+          setMousePos({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+          });
+        }
+        rafId = null;
+      });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
-  // Grid configuration
-  const dotSpacing = 50;
-  const dots = [];
+  // Grid configuration - increased spacing to reduce number of dots
+  const dotSpacing = 60;
   
-  const cols = Math.ceil(dimensions.width / dotSpacing) + 2;
-  const rows = Math.ceil(dimensions.height / dotSpacing) + 2;
+  const dots = useMemo(() => {
+    const dotsArray = [];
+    const cols = Math.ceil(dimensions.width / dotSpacing) + 2;
+    const rows = Math.ceil(dimensions.height / dotSpacing) + 2;
 
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      dots.push({
-        id: `${i}-${j}`,
-        x: j * dotSpacing,
-        y: i * dotSpacing,
-      });
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        dotsArray.push({
+          id: `${i}-${j}`,
+          x: j * dotSpacing,
+          y: i * dotSpacing,
+        });
+      }
     }
-  }
+    return dotsArray;
+  }, [dimensions.width, dimensions.height, dotSpacing]);
 
   return (
     <div
@@ -93,19 +106,16 @@ const AnimatedDot = ({ dotX, dotY, mouseX, mouseY }) => {
   const targetTranslateY = Math.sin(angle) * intensity * 30;
   const targetOpacity = 0.3 + intensity * 0.7;
 
-  // Animate scale and position with onChange callbacks
+  // Animate scale and position - optimized config for better performance
   const { scale, translateX, translateY, opacity } = useSpring({
     scale: targetScale,
     translateX: targetTranslateX,
     translateY: targetTranslateY,
     opacity: targetOpacity,
-    config: { tension: 50, friction: 20 },
-    onChange: () => {
-      // This will trigger on every spring update
-    },
+    config: { tension: 120, friction: 14 }, // Faster, more responsive
   });
 
-  // Combine all transforms into a single string that updates reactively
+  // Use a single transform that combines all values
   const [transform, setTransform] = useState('translate(-50%, -50%) scale(1)');
 
   useEffect(() => {
@@ -116,10 +126,7 @@ const AnimatedDot = ({ dotX, dotY, mouseX, mouseY }) => {
       setTransform(`translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(${s})`);
     };
 
-    // Update immediately
-    updateTransform();
-
-    // Use requestAnimationFrame loop for smooth updates
+    // Update on every frame for smooth animation
     let rafId;
     const loop = () => {
       updateTransform();
@@ -128,7 +135,7 @@ const AnimatedDot = ({ dotX, dotY, mouseX, mouseY }) => {
     rafId = requestAnimationFrame(loop);
 
     return () => {
-      cancelAnimationFrame(rafId);
+      if (rafId) cancelAnimationFrame(rafId);
     };
   }, [translateX, translateY, scale]);
 
@@ -143,6 +150,7 @@ const AnimatedDot = ({ dotX, dotY, mouseX, mouseY }) => {
         transform,
         opacity,
         transformOrigin: 'center',
+        willChange: 'transform, opacity',
       }}
     />
   );

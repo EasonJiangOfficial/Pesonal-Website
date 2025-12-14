@@ -82,12 +82,10 @@ export default function Hero() {
     setCursor("cursor-auto");
   };
   const clickedName = () => {
-    if (name === "Eason") {
-      setName("Contact Me");
+    if(showicons == true){
+      setShowIcons(false);  
+    }  else{
       setShowIcons(true);
-    } else {
-      setName("Eason");
-      setShowIcons(false);
     }
   };
   const renderIcons = () => {
@@ -104,7 +102,7 @@ export default function Hero() {
   };
   return (
     <div className="w-full gap-10 flex flex-col min-h-screen justify-center items-center relative z-10">
-      <div className="flex gap-5 flex-row justify-center items-center">
+      <div className="flex mb-20 gap-5 flex-row justify-center items-center">
         {showicons ? renderIcons() : unrenderIcons()}
       </div>
       <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-10 px-4">
@@ -127,6 +125,7 @@ export default function Hero() {
         </div>
         <div className="flex justify-center items-center w-[200px] h-[200px] sm:w-[200px] sm:h-[200px] lg:w-[300px] lg:h-[300px] order-1 lg:order-2 transition-all duration-300 ease-in-out sticker-hover hover:drop-shadow-2xl rounded-lg p-2" data-aos="fade-left">
           <Image
+            onClick={clickedName}
             src="/images/me.png"
             width={300}
             height={300}
